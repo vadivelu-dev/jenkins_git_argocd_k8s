@@ -19,11 +19,10 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    IMAGE_TAG = sh(script: "date +%Y%m%d%H%M%S", returnStdout: true).trim()
-                    env.IMAGE_TAG = IMAGE_TAG
+                    env.IMAGE_TAG = sh(script: "date +%Y%m%d%H%M%S", returnStdout: true).trim()
                 }
 
-                sh "docker build -t $IMAGE_NAME:$IMAGE_TAG ."
+                sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
             }
         }
 
@@ -35,10 +34,10 @@ pipeline {
                     passwordVariable: 'PASS'
                 )]) {
 
-                    sh '''
+                    sh """
                     echo $PASS | docker login -u $USER --password-stdin
-                    docker push $IMAGE_NAME:$IMAGE_TAG
-                    '''
+                    docker push ${IMAGE_NAME}:${IMAGE_TAG}
+                    """
                 }
             }
         }
