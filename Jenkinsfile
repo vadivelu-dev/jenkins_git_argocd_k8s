@@ -4,7 +4,6 @@ pipeline {
 
     environment {
         IMAGE_NAME = "vadivelu123/parking_app"
-        IMAGE_TAG = ""
         GIT_REPO = "https://github.com/vadivelu-dev/Project_Git_to_K8s.git"
     }
 
@@ -45,20 +44,28 @@ pipeline {
         stage('Update GitOps Repo (Argo CD Sync Trigger)') {
             steps {
 
-                git url: "${GIT_REPO}", branch: "main"
+                withCredentials([usernamePassword(
+                    credentialsId: 'github-creds',
+                    usernameVariable: 'GIT_USER',
+                    passwordVariable: 'GIT_TOKEN'
+                )]) {
 
-                sh """
-                # Set YOUR git identity (from your config)
-                git config user.name "Vadivelu M"
-                git config user.email "vadivelumsolo@gmail.com"
+                    git url: "${GIT_REPO}", branch: "main"
 
-                # Update deployment image tag
-                sed -i 's|image: .*|image: ${IMAGE_NAME}:${env.IMAGE_TAG}|g' deployment.yaml
+                    sh """
+                    git config user.name "Vadivelu M"
+                    git config user.email "vadivelumsolo@gmail.com"
 
-                git add deployment.yaml
-                git commit -m "Update image to ${IMAGE_NAME}:${env.IMAGE_TAG}"
-                git push origin main
-                """
+                    sed -i 's|image: .*|image: ${IMAGE_NAME}:${env.IMAGE_TAG}|g' deployment.yaml
+
+                    git add deployment.yaml
+                    git commit -m "Update image to ${IMAGE_NAME}:${env.IMAGE_TAG}"
+
+                    git remote set-url origin https://${GIT_USER}:${GIT_TOKEN}@github.com/vadivelu-dev/Project_Git_to_K8s.git
+
+                    git push origin main
+                    """
+                }
             }
         }
     }
