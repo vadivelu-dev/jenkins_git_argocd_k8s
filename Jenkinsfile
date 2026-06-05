@@ -63,10 +63,16 @@ pipeline {
 
                     cd gitops-repo
 
+		    echo "BEFORE UPDATE:"
+		    cat deployment.yaml
+
                     # SAFE image update (no greedy regex issues)
                     sed -i 's|image: .*|image: ${IMAGE_NAME}:${env.IMAGE_TAG}|g' deployment.yaml
 
-                    git add deployment.yaml
+                    echo "AFTER UPDATE:"
+		    cat deployment.yaml
+
+		    git add deployment.yaml
                     git commit -m "Update image to ${IMAGE_NAME}:${env.IMAGE_TAG}"
 
                     git push origin main
