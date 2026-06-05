@@ -18,7 +18,10 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    env.IMAGE_TAG = sh(script: "date +%Y%m%d%H%M%S", returnStdout: true).trim()
+                    env.IMAGE_TAG = sh(
+                        script: "date +%Y%m%d%H%M%S",
+                        returnStdout: true
+                    ).trim()
                 }
 
                 sh "docker build -t ${IMAGE_NAME}:${env.IMAGE_TAG} ."
@@ -50,18 +53,21 @@ pipeline {
                     passwordVariable: 'GIT_TOKEN'
                 )]) {
 
-                    git url: "${GIT_REPO}", branch: "main"
-
                     sh """
                     git config user.name "Vadivelu M"
                     git config user.email "vadivelumsolo@gmail.com"
 
+                    # Clone GitOps repo fresh
+                    rm -rf gitops-repo
+                    git clone https://${GIT_USER}:${GIT_TOKEN}@github.com/vadivelu-dev/Project_Git_to_K8s.git gitops-repo
+
+                    cd gitops-repo
+
+                    # SAFE image update (no greedy regex issues)
                     sed -i 's|image: .*|image: ${IMAGE_NAME}:${env.IMAGE_TAG}|g' deployment.yaml
 
                     git add deployment.yaml
                     git commit -m "Update image to ${IMAGE_NAME}:${env.IMAGE_TAG}"
-
-                    git remote set-url origin https://${GIT_USER}:${GIT_TOKEN}@github.com/vadivelu-dev/Project_Git_to_K8s.git
 
                     git push origin main
                     """
