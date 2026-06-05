@@ -22,7 +22,7 @@ pipeline {
                     env.IMAGE_TAG = sh(script: "date +%Y%m%d%H%M%S", returnStdout: true).trim()
                 }
 
-                sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
+                sh "docker build -t ${IMAGE_NAME}:${env.IMAGE_TAG} ."
             }
         }
 
@@ -36,7 +36,7 @@ pipeline {
 
                     sh """
                     echo $PASS | docker login -u $USER --password-stdin
-                    docker push ${IMAGE_NAME}:${IMAGE_TAG}
+                    docker push ${IMAGE_NAME}:${env.IMAGE_TAG}
                     """
                 }
             }
@@ -53,10 +53,10 @@ pipeline {
                 git config user.email "vadivelumsolo@gmail.com"
 
                 # Update deployment image tag
-                sed -i 's|image: .*|image: ${IMAGE_NAME}:${IMAGE_TAG}|g' deployment.yaml
+                sed -i 's|image: .*|image: ${IMAGE_NAME}:${env.IMAGE_TAG}|g' deployment.yaml
 
                 git add deployment.yaml
-                git commit -m "Update image to ${IMAGE_NAME}:${IMAGE_TAG}"
+                git commit -m "Update image to ${IMAGE_NAME}:${env.IMAGE_TAG}"
                 git push origin main
                 """
             }
