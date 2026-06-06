@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contact Us - ParkEasy - Smart Parking Solutions</title>
+    <meta
+      name="description"
+      content="Get in touch with ParkEasy for all your parking needs. Book a spot, ask questions, or provide feedback."
+    />
+    <meta
+      name="keywords"
+      content="contact parking, book parking, parking support, ParkEasy contact"
+    />
+
+    <!-- Favicons -->
+    <link href="static/img/logo.png" rel="icon" />
+    <link href="static/img/logo.png" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="static/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="static/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="static/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link
+      href="static/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Main CSS File -->
+    <link href="static/css/main.css" rel="stylesheet" />
+
+    <!-- Custom Contact Page Styles -->
+    <style>
+      .alert-success {
+        background-color: #d4edda !important;
+        border-color: #c3e6cb !important;
+        color: #155724 !important;
+        font-size: 16px !important;
+        padding: 15px 20px !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 10px rgba(40, 167, 69, 0.2) !important;
+        animation: slideIn 0.5s ease-out !important;
+      }
+
+      .alert-danger {
+        background-color: #f8d7da !important;
+        border-color: #f5c6cb !important;
+        color: #721c24 !important;
+        font-size: 16px !important;
+        padding: 15px 20px !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 10px rgba(220, 53, 69, 0.2) !important;
+        animation: slideIn 0.5s ease-out !important;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .loading {
+        display: none !important;
+        color: #007bff;
+        font-weight: 500;
+        margin-top: 10px;
+      }
+
+      .contact-form button[type="submit"] {
+        background-color: #007bff !important;
+        color: white !important;
+        border: none !important;
+        padding: 12px 30px !important;
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        border-radius: 5px !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+        margin-top: 15px !important;
+      }
+
+      .contact-form button[type="submit"]:hover {
+        background-color: #0056b3 !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3) !important;
+      }
+
+      .contact-form button[type="submit"]:disabled {
+        background-color: #6c757d !important;
+        cursor: not-allowed !important;
+        transform: none !important;
+      }
+
+      .error-message {
+        display: none;
+        color: #dc3545;
+        margin-top: 10px;
+      }
+
+      .sent-message {
+        display: none;
+        color: #28a745;
+        margin-top: 10px;
+      }
+    </style>
+
+    <!-- =======================================================
+  * Template Name: ParkEasy
+  * Template URL: https://bootstrapmade.com/strategy-bootstrap-agency-template/
+  * Updated: Jun 06 2025 with Bootstrap v5.3.6
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  </head>
+
+  <body class="contact-page">
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a
+          href="{{ url_for('index') }}"
+          class="logo d-flex align-items-center me-auto me-xl-0"
+        >
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <img src="static/img/logo.png" alt="ParkEasy Logo" />
+          <h1 class="sitename">ParkEasy</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('services') }}">Services</a></li>
+            <li><a href="{{ url_for('careers') }}">Careers</a></li>
+            <li>
+              <a href="{{ url_for('contact') }}" class="active">Contact</a>
+            </li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <a class="btn-getstarted" href="{{ url_for('contact') }}">Book Now</a>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Page Title -->
+      <div class="page-title dark-background" data-aos="fade">
+        <div class="container position-relative">
+          <h1>Contact Us</h1>
+          <p>
+            Get in touch with us for parking reservations, support, or any
+            questions you might have.
+          </p>
+          <nav class="breadcrumbs">
+            <ol>
+              <li><a href="{{ url_for('index') }}">Home</a></li>
+              <li class="current">Contact</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <!-- End Page Title -->
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            <div class="col-lg-6">
+              <div class="info-wrap">
+                <div
+                  class="info-item d-flex"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <i class="bi bi-geo-alt flex-shrink-0"></i>
+                  <div>
+                    <h3>Address</h3>
+                    <p>123 Parking Street, KR Puram, Bangalore 560036</p>
+                  </div>
+                </div>
+
+                <div
+                  class="info-item d-flex"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <i class="bi bi-telephone flex-shrink-0"></i>
+                  <div>
+                    <h3>Call Us</h3>
+                    <p>+91 555 PARK-EASY (7275-3279)</p>
+                  </div>
+                </div>
+
+                <div
+                  class="info-item d-flex"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
+                  <i class="bi bi-envelope flex-shrink-0"></i>
+                  <div>
+                    <h3>Email Us</h3>
+                    <p>info@parkeasy.com</p>
+                  </div>
+                </div>
+
+                <div
+                  class="info-item d-flex"
+                  data-aos="fade-up"
+                  data-aos-delay="500"
+                >
+                  <i class="bi bi-clock flex-shrink-0"></i>
+                  <div>
+                    <h3>Open Hours</h3>
+                    <p>
+                      24/7 Parking Access<br />Support: Mon-Sun 6:00AM - 10:00PM
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %} {% for category, message in messages %}
+              <div
+                class="alert alert-{{ 'success' if category == 'success' else 'danger' }} alert-dismissible fade show"
+                role="alert"
+                style="margin-bottom: 20px; font-weight: 500; border-left: 4px solid {{ '#28a745' if category == 'success' else '#dc3545' }};"
+              >
+                {% if category == 'success' %}
+                <i class="bi bi-check-circle-fill me-2"></i>
+                {% else %}
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                {% endif %} {{ message }}
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="alert"
+                  aria-label="Close"
+                ></button>
+              </div>
+              {% endfor %} {% endif %} {% endwith %}
+
+              <form
+                action="{{ url_for('contact') }}"
+                method="post"
+                class="contact-form"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div class="row gy-4">
+                  <div class="col-md-6">
+                    <label for="name-field" class="pb-2">Your Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name-field"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="email-field" class="pb-2">Your Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      id="email-field"
+                      required
+                    />
+                  </div>
+
+                  <div class="col-md-12">
+                    <label for="parking-type-field" class="pb-2"
+                      >Parking Type Required</label
+                    >
+                    <select
+                      name="parking_type"
+                      id="parking-type-field"
+                      class="form-control"
+                      required
+                    >
+                      <option value="">Select parking type...</option>
+                      <option value="Hourly Parking">Hourly Parking</option>
+                      <option value="Daily Parking">Daily Parking</option>
+                      <option value="Weekly Parking">Weekly Parking</option>
+                      <option value="Monthly Parking">Monthly Parking</option>
+                      <option value="Event Parking">Event Parking</option>
+                      <option value="Valet Service">Valet Service</option>
+                      <option value="Reserved Parking">Reserved Parking</option>
+                      <option value="Covered Parking">Covered Parking</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-12">
+                    <label for="message-field" class="pb-2">Message</label>
+                    <textarea
+                      class="form-control"
+                      name="message"
+                      rows="10"
+                      id="message-field"
+                      required
+                      placeholder="Please provide details about your parking requirements (location, duration, vehicle type, special needs, etc.)..."
+                    ></textarea>
+                  </div>
+
+                  <div class="col-md-12 text-center">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">
+                      Your message has been sent. Thank you!
+                    </div>
+
+                    <button type="submit">Send Message</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Contact Section -->
+
+      <!-- Map Section -->
+      <section id="map" class="map section">
+        <div
+          class="container-fluid p-0"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.016577847089!2d77.69484997507374!3d12.969915087355498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae11b4b7a3e38f%3A0xf1b5e29aeff93bb!2sKR%20Puram%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1640000000000!5m2!1sen!2sin"
+            width="100%"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </section>
+      <!-- /Map Section -->
+
+      <!-- FAQ Section -->
+      <section id="faq" class="faq section">
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="content px-xl-5">
+                <h3>
+                  <span>Frequently Asked </span><strong>Questions</strong>
+                </h3>
+                <p>
+                  Have questions about our parking services? Check out our most
+                  frequently asked questions below.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+              <div class="faq-container">
+                <div class="faq-item faq-active">
+                  <h3>
+                    <span class="num">1.</span>
+                    <span>How do I book a parking spot?</span>
+                  </h3>
+                  <div class="faq-content">
+                    <p>
+                      You can book a parking spot through our website or mobile
+                      app. Simply search for parking near your destination,
+                      select your preferred spot, choose your duration, and
+                      complete the payment.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+
+                <div class="faq-item">
+                  <h3>
+                    <span class="num">2.</span>
+                    <span>Can I cancel my reservation?</span>
+                  </h3>
+                  <div class="faq-content">
+                    <p>
+                      Yes, you can cancel your reservation up to 1 hour before
+                      your scheduled time for a full refund. Cancellations
+                      within 1 hour are subject to a small processing fee.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+
+                <div class="faq-item">
+                  <h3>
+                    <span class="num">3.</span>
+                    <span>What payment methods do you accept?</span>
+                  </h3>
+                  <div class="faq-content">
+                    <p>
+                      We accept all major credit cards, PayPal, Apple Pay,
+                      Google Pay, and other digital wallet options. All
+                      transactions are secure and encrypted.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+
+                <div class="faq-item">
+                  <h3>
+                    <span class="num">4.</span>
+                    <span>Is my car safe in your parking facilities?</span>
+                  </h3>
+                  <div class="faq-content">
+                    <p>
+                      Absolutely! All our parking locations are secured with
+                      CCTV monitoring, proper lighting, and regular security
+                      patrols. We also offer insurance options for additional
+                      peace of mind.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+
+                <div class="faq-item">
+                  <h3>
+                    <span class="num">5.</span>
+                    <span>Do you offer monthly parking subscriptions?</span>
+                  </h3>
+                  <div class="faq-content">
+                    <p>
+                      Yes! We offer monthly parking subscriptions at discounted
+                      rates. This is perfect for daily commuters and regular
+                      parkers. Contact us for more details on available
+                      locations and pricing.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /FAQ Section -->
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-about">
+            <a
+              href="{{ url_for('index') }}"
+              class="logo d-flex align-items-center"
+            >
+              <span class="sitename">ParkEasy</span>
+            </a>
+            <p>
+              Making parking convenient, secure, and affordable for everyone.
+              Find your perfect parking spot in nearby areas with ParkEasy.
+            </p>
+            <div class="social-links d-flex mt-4">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="{{ url_for('index') }}">Home</a></li>
+              <li><a href="{{ url_for('about') }}">About us</a></li>
+              <li><a href="{{ url_for('services') }}">Services</a></li>
+              <li><a href="#">Terms of service</a></li>
+              <li><a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="#">Hourly Parking</a></li>
+              <li><a href="#">Daily Parking</a></li>
+              <li><a href="#">Monthly Parking</a></li>
+              <li><a href="#">Event Parking</a></li>
+              <li><a href="#">Valet Services</a></li>
+            </ul>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-12 footer-contact text-center text-md-start"
+          >
+            <h4>Contact Us</h4>
+            <p>123 Parking Street</p>
+            <p>KR Puram, Bangalore</p>
+            <p>India</p>
+            <p class="mt-4">
+              <strong>Phone:</strong> <span>+91 555 PARK-EASY</span>
+            </p>
+            <p><strong>Email:</strong> <span>info@parkeasy.com</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span>
+          <strong class="px-1 sitename">ParkEasy</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="static/vendor/aos/aos.js"></script>
+    <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="static/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="static/js/main.js"></script>
+
+    <!-- Custom Contact Form Script -->
+    <script>
+      // Scroll to top of form when there's a flash message
+      document.addEventListener("DOMContentLoaded", function () {
+        const alertMessages = document.querySelectorAll(".alert");
+        if (alertMessages.length > 0) {
+          // Scroll to the form section
+          const formSection = document.getElementById("contact");
+          if (formSection) {
+            formSection.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+
+          // If it's a success message, clear the form after 3 seconds
+          const successAlert = document.querySelector(".alert-success");
+          if (successAlert) {
+            setTimeout(function () {
+              const form = document.querySelector(".contact-form");
+              if (form) {
+                form.reset();
+              }
+            }, 3000);
+          }
+        }
+      });
+
+      // Enhanced form submission feedback
+      const contactForm = document.querySelector(".contact-form");
+      if (contactForm) {
+        contactForm.addEventListener("submit", function (e) {
+          const submitButton = this.querySelector('button[type="submit"]');
+          const loading = this.querySelector(".loading");
+          const errorMessage = this.querySelector(".error-message");
+          const sentMessage = this.querySelector(".sent-message");
+
+          // Hide previous messages
+          if (errorMessage) errorMessage.style.display = "none";
+          if (sentMessage) sentMessage.style.display = "none";
+
+          // Show loading state
+          if (submitButton) {
+            submitButton.textContent = "Submitting...";
+            submitButton.disabled = true;
+          }
+
+          if (loading) {
+            loading.style.display = "block";
+          }
+
+          // Form will submit normally to Flask backend
+        });
+      }
+    </script>
+  </body>
+</html>

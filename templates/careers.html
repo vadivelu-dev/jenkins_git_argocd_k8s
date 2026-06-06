@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Careers - ParkEasy - Smart Parking Solutions</title>
+    <meta
+      name="description"
+      content="Join the ParkEasy team! Explore exciting career opportunities in the growing parking technology industry."
+    />
+    <meta
+      name="keywords"
+      content="careers, jobs, parking industry, technology jobs, ParkEasy careers"
+    />
+
+    <!-- Favicons -->
+    <link href="static/img/logo.png" rel="icon" />
+    <link href="static/img/logo.png" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="static/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="static/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="static/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link
+      href="static/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Main CSS File -->
+    <link href="static/css/main.css" rel="stylesheet" />
+
+    <!-- =======================================================
+  * Template Name: ParkEasy
+  * Template URL: https://bootstrapmade.com/strategy-bootstrap-agency-template/
+  * Updated: Jun 06 2025 with Bootstrap v5.3.6
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  </head>
+
+  <body class="careers-page">
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a
+          href="{{ url_for('index') }}"
+          class="logo d-flex align-items-center me-auto me-xl-0"
+        >
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <img src="static/img/logo.png" alt="ParkEasy Logo" />
+          <h1 class="sitename">ParkEasy</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('services') }}">Services</a></li>
+            <li>
+              <a href="{{ url_for('careers') }}" class="active">Careers</a>
+            </li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <a class="btn-getstarted" href="{{ url_for('contact') }}">Book Now</a>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Page Title -->
+      <div class="page-title dark-background" data-aos="fade">
+        <div class="container position-relative">
+          <h1>Join Our Team</h1>
+          <p>
+            Be part of the revolution in urban parking solutions. Help us make
+            parking easier for everyone.
+          </p>
+          <nav class="breadcrumbs">
+            <ol>
+              <li><a href="{{ url_for('index') }}">Home</a></li>
+              <li class="current">Careers</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <!-- End Page Title -->
+
+      <!-- Why Work With Us Section -->
+      <section id="why-work" class="why-work section">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Why Work With Us?</h2>
+          <div>
+            <span>Discover</span>
+            <span class="description-title"
+              >Why ParkEasy is a Great Place to Work</span
+            >
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="why-box">
+                <h3>Innovation at Heart</h3>
+                <p>
+                  Work with cutting-edge technology to solve real-world urban
+                  challenges. We're constantly innovating to improve the parking
+                  experience.
+                </p>
+                <div class="icon">
+                  <i class="bi bi-lightbulb"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="why-box">
+                <h3>Growth Opportunities</h3>
+                <p>
+                  Advance your career with comprehensive training programs,
+                  mentorship, and clear paths for professional development.
+                </p>
+                <div class="icon">
+                  <i class="bi bi-graph-up-arrow"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="why-box">
+                <h3>Great Benefits</h3>
+                <p>
+                  Competitive salaries, comprehensive health insurance, flexible
+                  work arrangements, and excellent work-life balance.
+                </p>
+                <div class="icon">
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
+              <div class="why-box">
+                <h3>Collaborative Culture</h3>
+                <p>
+                  Join a team of passionate professionals who work together to
+                  create innovative solutions and support each other's success.
+                </p>
+                <div class="icon">
+                  <i class="bi bi-people"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="500">
+              <div class="why-box">
+                <h3>Making an Impact</h3>
+                <p>
+                  Your work directly contributes to reducing urban congestion
+                  and making cities more livable for millions of people.
+                </p>
+                <div class="icon">
+                  <i class="bi bi-globe"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="600">
+              <div class="why-box">
+                <h3>Remote-Friendly</h3>
+                <p>
+                  Enjoy flexible work arrangements with opportunities for remote
+                  work and a modern, comfortable office environment.
+                </p>
+                <div class="icon">
+                  <i class="bi bi-house-check"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Why Work With Us Section -->
+
+      <!-- Open Positions Section -->
+      <section id="jobs" class="jobs section">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Open Positions</h2>
+          <div>
+            <span>Explore</span>
+            <span class="description-title">Current Job Opportunities</span>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="job-item">
+                <div class="job-header">
+                  <h4>Senior Software Engineer</h4>
+                  <span class="job-type">Full-time</span>
+                  <span class="job-location">Bangalore, KA / Remote</span>
+                </div>
+                <div class="job-description">
+                  <p>
+                    Join our engineering team to build scalable parking
+                    management systems. Experience with Python, React, and cloud
+                    technologies required.
+                  </p>
+                  <ul>
+                    <li>5+ years of software development experience</li>
+                    <li>Strong background in web application development</li>
+                    <li>Experience with microservices architecture</li>
+                    <li>Knowledge of database design and optimization</li>
+                  </ul>
+                </div>
+                <div class="job-footer">
+                  <a href="{{ url_for('contact') }}" class="btn btn-primary"
+                    >Apply Now</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="job-item">
+                <div class="job-header">
+                  <h4>Mobile App Developer</h4>
+                  <span class="job-type">Full-time</span>
+                  <span class="job-location">Mumbai, MH / Remote</span>
+                </div>
+                <div class="job-description">
+                  <p>
+                    Develop and maintain our iOS and Android mobile
+                    applications. Create intuitive user experiences for our
+                    parking platform.
+                  </p>
+                  <ul>
+                    <li>3+ years of mobile app development</li>
+                    <li>Experience with React Native or Flutter</li>
+                    <li>Knowledge of mobile UI/UX best practices</li>
+                    <li>App Store and Google Play deployment experience</li>
+                  </ul>
+                </div>
+                <div class="job-footer">
+                  <a href="{{ url_for('contact') }}" class="btn btn-primary"
+                    >Apply Now</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="job-item">
+                <div class="job-header">
+                  <h4>Data Analyst</h4>
+                  <span class="job-type">Full-time</span>
+                  <span class="job-location">Hyderabad, TG / Remote</span>
+                </div>
+                <div class="job-description">
+                  <p>
+                    Analyze parking data to provide insights for business
+                    decisions and optimize our parking allocation algorithms.
+                  </p>
+                  <ul>
+                    <li>Bachelor's degree in Data Science or related field</li>
+                    <li>
+                      Experience with Python, SQL, and data visualization tools
+                    </li>
+                    <li>Strong analytical and problem-solving skills</li>
+                    <li>
+                      Knowledge of statistical analysis and machine learning
+                    </li>
+                  </ul>
+                </div>
+                <div class="job-footer">
+                  <a href="{{ url_for('contact') }}" class="btn btn-primary"
+                    >Apply Now</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+              <div class="job-item">
+                <div class="job-header">
+                  <h4>Customer Success Manager</h4>
+                  <span class="job-type">Full-time</span>
+                  <span class="job-location">Pune, MH / Hybrid</span>
+                </div>
+                <div class="job-description">
+                  <p>
+                    Lead customer relationships and ensure successful adoption
+                    of our parking solutions. Drive customer satisfaction and
+                    retention.
+                  </p>
+                  <ul>
+                    <li>3+ years in customer success or account management</li>
+                    <li>Excellent communication and interpersonal skills</li>
+                    <li>Experience with SaaS platforms</li>
+                    <li>Strong project management abilities</li>
+                  </ul>
+                </div>
+                <div class="job-footer">
+                  <a href="{{ url_for('contact') }}" class="btn btn-primary"
+                    >Apply Now</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
+              <div class="job-item">
+                <div class="job-header">
+                  <h4>DevOps Engineer</h4>
+                  <span class="job-type">Full-time</span>
+                  <span class="job-location">Chennai, TN / Remote</span>
+                </div>
+                <div class="job-description">
+                  <p>
+                    Manage our cloud infrastructure and deployment pipelines.
+                    Ensure high availability and scalability of our parking
+                    platform.
+                  </p>
+                  <ul>
+                    <li>Experience with AWS, Docker, and Kubernetes</li>
+                    <li>Knowledge of CI/CD pipelines and automation</li>
+                    <li>Strong scripting skills (Python, Bash)</li>
+                    <li>Understanding of security best practices</li>
+                  </ul>
+                </div>
+                <div class="job-footer">
+                  <a href="{{ url_for('contact') }}" class="btn btn-primary"
+                    >Apply Now</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="600">
+              <div class="job-item">
+                <div class="job-header">
+                  <h4>Marketing Specialist</h4>
+                  <span class="job-type">Full-time</span>
+                  <span class="job-location">Delhi, DL / Hybrid</span>
+                </div>
+                <div class="job-description">
+                  <p>
+                    Develop and execute marketing campaigns to grow our user
+                    base. Focus on digital marketing and community engagement.
+                  </p>
+                  <ul>
+                    <li>2+ years in digital marketing</li>
+                    <li>Experience with social media and content marketing</li>
+                    <li>Knowledge of SEO/SEM and analytics tools</li>
+                    <li>Creative thinking and strong writing skills</li>
+                  </ul>
+                </div>
+                <div class="job-footer">
+                  <a href="{{ url_for('contact') }}" class="btn btn-primary"
+                    >Apply Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Open Positions Section -->
+
+      <!-- Application Process Section -->
+      <section id="process" class="process section light-background">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Application Process</h2>
+          <div>
+            <span>How to</span>
+            <span class="description-title">Apply to ParkEasy</span>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row gy-4">
+            <div
+              class="col-lg-3 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="process-item text-center">
+                <div class="process-number">01</div>
+                <h4>Submit Application</h4>
+                <p>
+                  Send us your resume and cover letter through our contact form,
+                  specifying the position you're interested in.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-3 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="process-item text-center">
+                <div class="process-number">02</div>
+                <h4>Initial Screening</h4>
+                <p>
+                  Our HR team will review your application and conduct an
+                  initial phone or video screening within one week.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-3 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="process-item text-center">
+                <div class="process-number">03</div>
+                <h4>Technical Interview</h4>
+                <p>
+                  For technical roles, you'll participate in a technical
+                  interview or coding challenge with our engineering team.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-3 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="process-item text-center">
+                <div class="process-number">04</div>
+                <h4>Final Interview</h4>
+                <p>
+                  Meet with the hiring manager and potential team members for a
+                  cultural fit and final technical discussion.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Application Process Section -->
+
+      <!-- Benefits Section -->
+      <section id="benefits" class="benefits section">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Employee Benefits</h2>
+          <div>
+            <span>What We</span>
+            <span class="description-title">Offer Our Team</span>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row gy-4">
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="benefit-item">
+                <i class="bi bi-heart-pulse"></i>
+                <h4>Health & Wellness</h4>
+                <p>
+                  Comprehensive health, dental, and vision insurance. Mental
+                  health support and wellness programs.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="benefit-item">
+                <i class="bi bi-piggy-bank"></i>
+                <h4>Financial Benefits</h4>
+                <p>
+                  Competitive salary, equity options, 401(k) matching, and
+                  performance-based bonuses.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="benefit-item">
+                <i class="bi bi-calendar-check"></i>
+                <h4>Time Off</h4>
+                <p>
+                  Unlimited PTO policy, paid holidays, parental leave, and
+                  sabbatical opportunities.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="benefit-item">
+                <i class="bi bi-book"></i>
+                <h4>Learning & Development</h4>
+                <p>
+                  Professional development budget, conference attendance, online
+                  courses, and mentorship programs.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <div class="benefit-item">
+                <i class="bi bi-house-gear"></i>
+                <h4>Work Flexibility</h4>
+                <p>
+                  Remote work options, flexible hours, modern office spaces, and
+                  ergonomic equipment.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              <div class="benefit-item">
+                <i class="bi bi-people-fill"></i>
+                <h4>Team Culture</h4>
+                <p>
+                  Team building events, company retreats, free snacks, and a
+                  collaborative work environment.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Benefits Section -->
+
+      <!-- Call to Action Section -->
+      <section
+        id="call-to-action"
+        class="call-to-action section dark-background"
+      >
+        <div class="container">
+          <div class="row" data-aos="zoom-in">
+            <div class="col-xl-9 text-center text-xl-start">
+              <h3>Ready to Join Our Team?</h3>
+              <p>
+                Don't see a position that matches your skills? We're always
+                looking for talented individuals. Send us your resume and tell
+                us how you can contribute to ParkEasy's mission.
+              </p>
+            </div>
+            <div class="col-xl-3 cta-btn-container text-center">
+              <a class="cta-btn align-middle" href="{{ url_for('contact') }}"
+                >Apply Today</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Call to Action Section -->
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-about">
+            <a
+              href="{{ url_for('index') }}"
+              class="logo d-flex align-items-center"
+            >
+              <span class="sitename">ParkEasy</span>
+            </a>
+            <p>
+              Making parking convenient, secure, and affordable for everyone.
+              Find your perfect parking spot in nearby areas with ParkEasy.
+            </p>
+            <div class="social-links d-flex mt-4">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="{{ url_for('index') }}">Home</a></li>
+              <li><a href="{{ url_for('about') }}">About us</a></li>
+              <li><a href="{{ url_for('services') }}">Services</a></li>
+              <li><a href="#">Terms of service</a></li>
+              <li><a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="#">Hourly Parking</a></li>
+              <li><a href="#">Daily Parking</a></li>
+              <li><a href="#">Monthly Parking</a></li>
+              <li><a href="#">Event Parking</a></li>
+              <li><a href="#">Valet Services</a></li>
+            </ul>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-12 footer-contact text-center text-md-start"
+          >
+            <h4>Contact Us</h4>
+            <p>123 Parking Street</p>
+            <p>KR Puram, Bangalore</p>
+            <p>India</p>
+            <p class="mt-4">
+              <strong>Phone:</strong> <span>+91 555 PARK-EASY</span>
+            </p>
+            <p><strong>Email:</strong> <span>info@parkeasy.com</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span>
+          <strong class="px-1 sitename">ParkEasy</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="static/vendor/php-email-form/validate.js"></script>
+    <script src="static/vendor/aos/aos.js"></script>
+    <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="static/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="static/js/main.js"></script>
+  </body>
+</html>

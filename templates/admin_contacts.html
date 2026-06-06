@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Contact Submissions</title>
+    <link
+      href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .container {
+        margin-top: 2rem;
+      }
+      .card {
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+      }
+      .table th {
+        background-color: #007bff;
+        color: white;
+      }
+      .badge-parking {
+        font-size: 0.75em;
+      }
+      .spinner-border {
+        width: 0.8rem;
+        height: 0.8rem;
+        border-width: 0.1em;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .bi-spinner-border {
+        animation: spin 1s linear infinite;
+      }
+      .table th,
+      .table td {
+        white-space: nowrap;
+      }
+      .table td:nth-child(5) {
+        /* Message column */
+        white-space: normal;
+        max-width: 200px;
+      }
+      .table th:nth-child(7),
+      .table td:nth-child(7) {
+        /* Submitted At column */
+        min-width: 130px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <span class="navbar-brand">ParkEasy Admin - Contact Submissions</span>
+        <a href="{{ url_for('index') }}" class="btn btn-outline-light"
+          >Back to Website</a
+        >
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- Flash messages -->
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %}
+      <div
+        class="alert alert-{{ 'danger' if category == 'error' else 'success' }} alert-dismissible fade show"
+        role="alert"
+      >
+        {{ message }}
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+        ></button>
+      </div>
+      {% endfor %} {% endif %} {% endwith %}
+
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <h5 class="mb-0">
+                  <i class="bi bi-people"></i> Contact Submissions
+                </h5>
+                <small class="text-muted">
+                  Total submissions: {{ contacts|length }} {% set verified_count
+                  = 0 %} {% for contact in contacts %} {% if contact.verified %}
+                  {% set verified_count = verified_count + 1 %} {% endif %} {%
+                  endfor %} | Verified: {{ verified_count }} | Pending: {{
+                  contacts|length - verified_count }}
+                </small>
+              </div>
+              <div>
+                {% if contacts %}
+                <a
+                  href="{{ url_for('admin_reports') }}"
+                  class="btn btn-outline-primary btn-sm me-2"
+                >
+                  <i class="bi bi-bar-chart"></i> Reports
+                </a>
+                <a
+                  href="{{ url_for('export_contacts_csv') }}"
+                  class="btn btn-outline-success btn-sm"
+                >
+                  <i class="bi bi-download"></i> Export CSV
+                </a>
+                {% endif %}
+              </div>
+            </div>
+            <div class="card-body">
+              {% if contacts %}
+              <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Parking Type</th>
+                      <th>Message</th>
+                      <th>Status</th>
+                      <th>Submitted At</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for contact in contacts %}
+                    <tr id="contact-row-{{ contact._id }}">
+                      <td>{{ contact._id }}</td>
+                      <td>{{ contact.name }}</td>
+                      <td>
+                        <a href="mailto:{{ contact.email }}"
+                          >{{ contact.email }}</a
+                        >
+                      </td>
+                      <td>
+                        <span class="badge bg-primary badge-parking"
+                          >{{ contact.parking_type }}</span
+                        >
+                      </td>
+                      <td>
+                        <div
+                          style="
+                            max-width: 200px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                          "
+                        >
+                          {{ contact.message[:80] }}{% if contact.message|length
+                          > 80 %}...{% endif %}
+                          <br />
+                          <a
+                            href="{{ url_for('contact_details', contact_id=contact._id) }}"
+                            class="text-primary small"
+                            >View Full</a
+                          >
+                        </div>
+                      </td>
+                      <td>
+                        {% if contact.verified %}
+                        <span class="badge bg-success">Verified</span>
+                        {% else %}
+                        <span class="badge bg-warning">Pending</span>
+                        {% endif %}
+                      </td>
+                      <td style="min-width: 120px">
+                        {{ contact.created_at.strftime('%Y-%m-%d %H:%M') if
+                        contact.created_at else 'N/A' }}
+                      </td>
+                      <td>
+                        <div class="btn-group" role="group">
+                          {% if not contact.verified %}
+                          <form
+                            method="POST"
+                            action="{{ url_for('verify_contact', contact_id=contact._id) }}"
+                            style="display: inline"
+                            onsubmit="return confirm('Mark this contact as verified?')"
+                          >
+                            <button
+                              type="submit"
+                              class="btn btn-success btn-sm"
+                            >
+                              <i class="bi bi-check-circle"></i> Verify
+                            </button>
+                          </form>
+                          {% endif %}
+
+                          <form
+                            method="POST"
+                            action="{{ url_for('delete_contact', contact_id=contact._id) }}"
+                            style="display: inline"
+                            onsubmit="return confirm('Are you sure you want to delete this contact submission? This action cannot be undone.')"
+                          >
+                            <button type="submit" class="btn btn-danger btn-sm">
+                              <i class="bi bi-trash"></i> Delete
+                            </button>
+                          </form>
+                        </div>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+              {% else %}
+              <div class="text-center py-4">
+                <h6 class="text-muted">No contact submissions yet.</h6>
+                <p class="text-muted">
+                  Contact submissions will appear here once users submit the
+                  contact form.
+                </p>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  </body>
+</html>

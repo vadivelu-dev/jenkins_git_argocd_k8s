@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>About Us - ParkEasy - Smart Parking Solutions</title>
+    <meta
+      name="description"
+      content="Learn about ParkEasy, your trusted partner for finding convenient and secure parking spaces in nearby areas."
+    />
+    <meta
+      name="keywords"
+      content="parking, nearby parking, car parking, parking solutions, ParkEasy"
+    />
+
+    <!-- Favicons -->
+    <link href="static/img/logo.png" rel="icon" />
+    <link href="static/img/logo.png" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="static/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="static/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="static/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link
+      href="static/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Main CSS File -->
+    <link href="static/css/main.css" rel="stylesheet" />
+
+    <!-- =======================================================
+  * Template Name: ParkEasy
+  * Template URL: https://bootstrapmade.com/strategy-bootstrap-agency-template/
+  * Updated: Jun 06 2025 with Bootstrap v5.3.6
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  </head>
+
+  <body class="about-page">
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a
+          href="{{ url_for('index') }}"
+          class="logo d-flex align-items-center me-auto me-xl-0"
+        >
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <img src="static/img/logo.png" alt="ParkEasy Logo" />
+          <h1 class="sitename">ParkEasy</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}" class="active">About</a></li>
+            <li><a href="{{ url_for('services') }}">Services</a></li>
+            <li><a href="{{ url_for('careers') }}">Careers</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <a class="btn-getstarted" href="{{ url_for('contact') }}">Book Now</a>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Page Title -->
+      <div class="page-title dark-background" data-aos="fade">
+        <div class="container position-relative">
+          <h1>About ParkEasy</h1>
+          <p>
+            Your trusted partner for finding convenient, secure, and affordable
+            parking spaces in nearby areas.
+          </p>
+          <nav class="breadcrumbs">
+            <ol>
+              <li><a href="{{ url_for('index') }}">Home</a></li>
+              <li class="current">About</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <!-- End Page Title -->
+
+      <!-- About Section -->
+      <section id="about" class="about section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>About ParkEasy</h2>
+          <div>
+            <span>Learn More</span>
+            <span class="description-title">About Our Mission</span>
+          </div>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up">
+          <div class="row gy-4">
+            <div class="col-lg-6">
+              <h3>Revolutionizing Urban Parking Solutions</h3>
+              <p>
+                ParkEasy is dedicated to solving the modern urban challenge of
+                finding convenient and secure parking spaces. We understand the
+                frustration of circling blocks looking for parking, especially
+                in busy areas.
+              </p>
+              <p>
+                Our platform connects drivers with available parking spaces in
+                their desired locations, making parking hassle-free and
+                efficient. Whether you're heading to work, shopping, or visiting
+                friends, we've got your parking needs covered.
+              </p>
+            </div>
+            <div class="col-lg-6">
+              <img
+                src="static/img/car_parking.avif"
+                class="img-fluid"
+                alt="About ParkEasy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /About Section -->
+
+      <!-- Stats Section -->
+      <section id="stats" class="stats section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            <div
+              class="col-lg-3 col-md-6 d-flex flex-column align-items-center"
+            >
+              <i class="bi bi-car-front"></i>
+              <div class="stats-item">
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="50000"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>Parking Spaces</p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-3 col-md-6 d-flex flex-column align-items-center"
+            >
+              <i class="bi bi-people"></i>
+              <div class="stats-item">
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="25000"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>Happy Customers</p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-3 col-md-6 d-flex flex-column align-items-center"
+            >
+              <i class="bi bi-geo-alt"></i>
+              <div class="stats-item">
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="500"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>Locations</p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-3 col-md-6 d-flex flex-column align-items-center"
+            >
+              <i class="bi bi-clock"></i>
+              <div class="stats-item">
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="24"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>Hours Support</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Stats Section -->
+
+      <!-- Features Section -->
+      <section id="features" class="features section">
+        <div class="container">
+          <div class="row gy-4">
+            <div
+              class="col-lg-3 col-md-4"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="features-item">
+                <i class="bi bi-search" style="color: #ffbb2c"></i>
+                <h3><a href="" class="stretched-link">Easy Search</a></h3>
+                <p>
+                  Find parking spaces near your destination with our intuitive
+                  search system
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-3 col-md-4"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="features-item">
+                <i class="bi bi-shield-check" style="color: #5578ff"></i>
+                <h3><a href="" class="stretched-link">Secure Parking</a></h3>
+                <p>
+                  All our parking locations are verified and secure for your
+                  peace of mind
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-3 col-md-4"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="features-item">
+                <i class="bi bi-currency-dollar" style="color: #e80368"></i>
+                <h3><a href="" class="stretched-link">Affordable Rates</a></h3>
+                <p>
+                  Competitive pricing with transparent rates and no hidden fees
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-3 col-md-4"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="features-item">
+                <i class="bi bi-phone" style="color: #e361ff"></i>
+                <h3><a href="" class="stretched-link">Mobile App</a></h3>
+                <p>
+                  Book and manage your parking reservations on the go with our
+                  mobile app
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-3 col-md-4"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <div class="features-item">
+                <i class="bi bi-clock-history" style="color: #47aeff"></i>
+                <h3>
+                  <a href="" class="stretched-link">Real-time Availability</a>
+                </h3>
+                <p>
+                  Get real-time updates on parking space availability and
+                  reservations
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-3 col-md-4"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              <div class="features-item">
+                <i class="bi bi-headset" style="color: #ffa76e"></i>
+                <h3><a href="" class="stretched-link">24/7 Support</a></h3>
+                <p>
+                  Round-the-clock customer support to assist you with any
+                  parking needs
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-3 col-md-4"
+              data-aos="fade-up"
+              data-aos-delay="700"
+            >
+              <div class="features-item">
+                <i class="bi bi-star" style="color: #11dbcf"></i>
+                <h3><a href="" class="stretched-link">Premium Locations</a></h3>
+                <p>
+                  Access to premium parking locations in the most convenient
+                  areas
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-3 col-md-4"
+              data-aos="fade-up"
+              data-aos-delay="800"
+            >
+              <div class="features-item">
+                <i class="bi bi-arrow-repeat" style="color: #4233ff"></i>
+                <h3><a href="" class="stretched-link">Flexible Booking</a></h3>
+                <p>
+                  Flexible booking options with easy cancellation and
+                  modification policies
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Features Section -->
+
+      <!-- Team Section -->
+      <section id="team" class="team section">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Our Team</h2>
+          <div>
+            <span>Meet Our</span>
+            <span class="description-title">Professional Team</span>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row gy-4">
+            <div
+              class="col-xl-3 col-md-6 d-flex"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="member">
+                <img src="static/img/car_park.jpg" class="img-fluid" alt="" />
+                <h4>John Smith</h4>
+                <span>CEO & Founder</span>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-xl-3 col-md-6 d-flex"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="member">
+                <img
+                  src="static/img/parking-allotment.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <h4>Sarah Johnson</h4>
+                <span>CTO</span>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-xl-3 col-md-6 d-flex"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="member">
+                <img src="static/img/park.jpg" class="img-fluid" alt="" />
+                <h4>Michael Brown</h4>
+                <span>Operations Manager</span>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-xl-3 col-md-6 d-flex"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="member">
+                <img
+                  src="static/img/parking-car-logo.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <h4>Emily Davis</h4>
+                <span>Customer Success Manager</span>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Team Section -->
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-about">
+            <a
+              href="{{ url_for('index') }}"
+              class="logo d-flex align-items-center"
+            >
+              <span class="sitename">ParkEasy</span>
+            </a>
+            <p>
+              Making parking convenient, secure, and affordable for everyone.
+              Find your perfect parking spot in nearby areas with ParkEasy.
+            </p>
+            <div class="social-links d-flex mt-4">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="{{ url_for('index') }}">Home</a></li>
+              <li><a href="{{ url_for('about') }}">About us</a></li>
+              <li><a href="{{ url_for('services') }}">Services</a></li>
+              <li><a href="#">Terms of service</a></li>
+              <li><a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="#">Hourly Parking</a></li>
+              <li><a href="#">Daily Parking</a></li>
+              <li><a href="#">Monthly Parking</a></li>
+              <li><a href="#">Event Parking</a></li>
+              <li><a href="#">Valet Services</a></li>
+            </ul>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-12 footer-contact text-center text-md-start"
+          >
+            <h4>Contact Us</h4>
+            <p>123 Parking Street</p>
+            <p>KR Puram, Bangalore</p>
+            <p>India</p>
+            <p class="mt-4">
+              <strong>Phone:</strong> <span>+91 555 PARK-EASY</span>
+            </p>
+            <p><strong>Email:</strong> <span>info@parkeasy.com</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span>
+          <strong class="px-1 sitename">ParkEasy</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="static/vendor/php-email-form/validate.js"></script>
+    <script src="static/vendor/aos/aos.js"></script>
+    <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="static/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="static/js/main.js"></script>
+  </body>
+</html>
