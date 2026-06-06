@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: vadivelu123/parking_app:20260606121330
+        image: vadivelu123/parking_app:20260606123906
         ports:
         - containerPort: 5000
 ---
