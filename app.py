@@ -199,6 +199,10 @@ def admin_reports():
         flash(f'Error generating reports: {e}', 'error')
         return redirect(url_for('admin_contacts'))
 
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+
 @app.route("/admin/verify_contact/<contact_id>", methods=['POST'])
 def verify_contact(contact_id):
     """Mark a contact submission as verified"""
