@@ -59,7 +59,7 @@ pipeline {
 
                     # Clone GitOps repo fresh
                     rm -rf gitops-repo
-                    git clone https://${GIT_USER}:${GIT_TOKEN}@github.com/vadivelu-dev/Project_Git_to_K8s.git gitops-repo
+                    git clone https://${GIT_USER}:${GIT_TOKEN}@github.com/vadivelu-dev/jenkins_git_argocd_k8s.git gitops-repo
 
                     cd gitops-repo
 
