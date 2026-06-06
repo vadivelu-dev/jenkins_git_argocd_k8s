@@ -4,7 +4,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = "vadivelu123/parking_app"
-        GIT_REPO = "https://github.com/vadivelu-dev/Project_Git_to_K8s.git"
+        GIT_REPO = "https://github.com/vadivelu-dev/jenkins_git_argocd_k8s.git"
     }
 
     stages {
