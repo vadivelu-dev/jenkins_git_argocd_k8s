@@ -1,9 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PARKING APP</title>
+    <title>Parking App</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(120deg, #2980b9, #6dd5fa);
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .card {
+            background: white;
+            color: black;
+            padding: 40px;
+            width: 400px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .btn {
+            background: #2980b9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #1c5f86;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Parking App Deployed Successfully!</h1>
+
+    <div class="card">
+        <h1>🚗 Parking App</h1>
+        <p>Deployed Successfully via Jenkins + Argo CD 🚀</p>
+
+        <button class="btn">Book Slot</button>
+    </div>
+
 </body>
 </html>
