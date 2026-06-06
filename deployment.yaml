@@ -20,7 +20,7 @@ spec:
       containers:
       - name: myapp
 
-        image: vadivelu123/parking_app:20260606100947
+        image: vadivelu123/parking_app:20260606101004
 
         ports:
         - containerPort: 80
